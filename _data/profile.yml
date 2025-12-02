@@ -5,7 +5,7 @@ navbar_name: "Anton Banta"
 positions:
 - name: Biotech and ML Engineer
 - name: Houston Methodist
-  logo: /assets/images/badges/MIT_Social_circle.png  # Logo is optional
+  logo: /assets/images/badges/HMH_logo.jpg  # Logo is optional
 
 
 email: "anton.banta@gmail.com"
@@ -35,13 +35,11 @@ portrait_url: /assets/images/portrait.jpeg
 
 education:
 - name: Rice University
-  logo: /assets/images/badges/MIT_Social_circle.png
-  position: >- 
-    Department of Electrical and Computer Engineering <br/>
-    Ph.D. 
+  logo: /assets/images/badges/Rice_logo.jpg
+  position: Ph.D. in Electrical and Computer Engineering
   date: Aug 2019 - Dec 2023
 - name: Rice University
-  logo: /assets/images/badges/PKU_red.png
+  logo: /assets/images/badges/Rice_logo.jpg
   position: B.S. in Bioengineering
   date: Aug 2015 - May 2019
 
