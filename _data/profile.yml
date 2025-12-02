@@ -3,8 +3,8 @@ secondary_name: ""
 navbar_name: "Anton Banta"
 
 positions:
-- name: Biotech and Machine Learning Engineer
-- name: Houston Methodist Research Institute
+- name: Biotech and ML Engineer
+- name: Houston Methodist
   logo: /assets/images/badges/MIT_Social_circle.png  # Logo is optional
 
 
