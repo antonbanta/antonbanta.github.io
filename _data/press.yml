@@ -1,0 +1,34 @@
+# Press coverage shown on the homepage. The first outlet in each list is used as the headline link.
+- headline: "Implantable device may help restore function after spinal cord injury"
+  date: Aug 2026
+  about: >-
+    Coverage of our Nature Communications paper on an ultrathin, wrap-around spinal cord interface.
+  paper: https://doi.org/10.1038/s41467-026-75128-z
+  outlets:
+  - name: Houston Methodist
+    url: https://www.houstonmethodist.org/newsroom/implantable-device-may-help-restore-function-after-spinal-cord-injury/
+  - name: EurekAlert!
+    url: https://www.eurekalert.org/news-releases/1140251
+  - name: Medical Xpress
+    url: https://medicalxpress.com/news/2026-08-implantable-device-function-spinal-cord.html
+  - name: NR Times
+    url: https://nrtimes.co.uk/?p=48189
+  - name: Design Development Today
+    url: https://www.designdevelopmenttoday.com/industries/medical/news/22972528/implantable-device-may-help-restore-function-after-spinal-cord-injury
+
+- headline: "US Army backs ‘sleeping cap’ to help brains take out the trash"
+  date: Sep 2021
+  about: >-
+    Coverage of the Rice, Houston Methodist, and Baylor College of Medicine project to measure and modulate
+    cerebrospinal fluid flow noninvasively during sleep.
+  outlets:
+  - name: Rice News
+    url: https://news.rice.edu/news/2021/us-army-backs-sleeping-cap-help-brains-take-out-trash
+  - name: Houston Methodist
+    url: https://www.houstonmethodist.org/newsroom/us-army-backs-sleeping-cap-to-help-brains-take-out-the-trash/
+  - name: EurekAlert!
+    url: https://www.eurekalert.org/news-releases/930014
+  - name: Interesting Engineering
+    url: https://interestingengineering.com/us-army-funds-sleeping-cap-to-help-your-brain-clear-out-waste
+  - name: Sleep Review
+    url: https://sleepreviewmag.com/sleep-health/sleep-whole-body/brain/brain-sleeping-cap/

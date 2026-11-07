@@ -1,0 +1,27 @@
+<div class="row mt-3">
+    <div class="col">
+        <div class="card border-0 shadow-sm bg-white">
+            <div class="card-body p-4">
+                <h6 class="mx-2 mb-3"><i class="far fa-newspaper mr-1"></i> In the press</h6>
+                <ul class="list-unstyled mx-2 mb-0">
+                    {% for story in site.data.press %}
+                    <li class="{% unless forloop.last %}mb-3 pb-3 border-bottom{% endunless %}">
+                        <div class="d-flex">
+                            <a class="font-weight-bold text-body" target="_blank" href="{{ story.outlets[0].url }}">{{ story.headline }}</a>
+                            <div class="ml-auto pl-3 small text-muted no-break"><em>{{ story.date }}</em></div>
+                        </div>
+                        <div class="small text-muted mt-1">
+                            {{ story.about }}
+                            {% if story.paper %}<a target="_blank" href="{{ story.paper }}">[Paper]</a>{% endif %}
+                        </div>
+                        <div class="small mt-1">
+                            <span class="text-muted">Covered by:</span>
+                            {% for outlet in story.outlets %}<a target="_blank" href="{{ outlet.url }}">{{ outlet.name }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

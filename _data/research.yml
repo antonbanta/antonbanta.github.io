@@ -48,7 +48,9 @@
       I'm drawn to interfaces that read from and write to the nervous system as non-invasively as possible.
       Across projects I've worked with signals recorded at very different depths, from scalp EEG to
       electrodes inside the brain to arrays on the surface of the spinal cord, and with the machine learning
-      needed to decode them.
+      needed to decode them. With collaborators at Houston Methodist and Cambridge, I also wrote a review of
+      where brain–computer interfaces and neuroprosthetics stand today and what their clinical translation
+      means for neurosurgery.
     </p>
   threads:
   - >-
@@ -60,6 +62,10 @@
     <strong>Scalp versus intracranial recordings.</strong> How much of what deep electrodes capture can be
     recovered from the scalp? We've studied simultaneous scalp EEG and stereo-EEG recordings, and reviewed the
     methods used to infer neural sources from EEG.
+  - >-
+    <strong>Neural decoding during natural behavior.</strong> I analyzed large neural datasets recorded from
+    freely moving primates, studying continual learning across behavioral contexts and using foundation models
+    and diffusion architectures to reconstruct visual perception from invasive neural recordings.
   - >-
     <strong>Non-invasive prosthetic control.</strong> As an advisor to Morph Labs, I help develop an EEG-based
     system for natural, intuitive control of prosthetic limbs.
@@ -105,7 +111,10 @@
     <p>
       Wearables make this especially exciting. Devices worn every night produce long, rich records of the heart,
       breathing, temperature, and movement, which could reveal slow changes in health long before symptoms
-      appear, including changes in the brain (see <a href="#csf">CSF flow &amp; brain clearance</a>).
+      appear, including changes in the brain (see <a href="#csf">CSF flow &amp; brain clearance</a>). That's
+      a large part of my work at Oura, where I help turn new ring sensing modalities into health features, from
+      human-subject studies of next-generation optical, mechanical, and physiological sensors to the algorithms
+      that extract biomarkers from multimodal time series.
     </p>
   questions:
   - Can self-supervised models trained on paired signals (for example, intracranial and scalp EEG) improve what we can infer from the cheaper signal alone?

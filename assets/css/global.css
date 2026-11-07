@@ -105,3 +105,27 @@ div.lazy {
 .research-section {
     scroll-margin-top: 80px;
 }
+
+/* Collapsible research sections */
+.research-toggle:hover,
+.research-toggle:focus {
+    text-decoration: none;
+}
+
+.research-toggle:hover h3 {
+    color: #0056b3;
+}
+
+.research-icon {
+    font-size: 1.4rem;
+    width: 2rem;
+    text-align: center;
+}
+
+.research-chevron {
+    transition: transform 0.2s ease;
+}
+
+.research-toggle:not(.collapsed) .research-chevron {
+    transform: rotate(180deg);
+}
