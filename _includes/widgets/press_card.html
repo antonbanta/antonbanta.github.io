@@ -2,7 +2,7 @@
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body p-4">
-                <h6 class="mx-2 mb-3"><i class="far fa-newspaper mr-1"></i> In the press</h6>
+                <h6 class="mx-2 mb-3"><i class="far fa-newspaper mr-1 accent-icon"></i> In the press</h6>
                 <ul class="list-unstyled mx-2 mb-0">
                     {% for story in site.data.press %}
                     <li class="{% unless forloop.last %}mb-3 pb-3 border-bottom{% endunless %}">
@@ -15,7 +15,7 @@
                             {% if story.paper %}<a target="_blank" href="{{ story.paper }}">[Paper]</a>{% endif %}
                         </div>
                         <div class="small mt-1">
-                            <span class="text-muted">Covered by:</span>
+                            <span class="text-muted">{{ story.outlets_label | default: "Covered by" }}:</span>
                             {% for outlet in story.outlets %}<a target="_blank" href="{{ outlet.url }}">{{ outlet.name }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
                         </div>
                     </li>

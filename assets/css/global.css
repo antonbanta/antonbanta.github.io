@@ -1,4 +1,12 @@
 @charset "utf-8";
+
+/* Accent color, used for the title bar, links, buttons and icons */
+:root {
+    --accent: #064E3B;
+    --accent-hover: #047857;
+    --accent-soft: #ECFDF5;
+    --accent-ring: rgba(6, 78, 59, 0.25);
+}
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
@@ -113,7 +121,7 @@ div.lazy {
 
 .research-tile:hover {
     text-decoration: none;
-    border-color: #adb5bd !important;
+    border-color: var(--accent) !important;
     box-shadow: 0 .125rem .5rem rgba(0, 0, 0, .08);
 }
 
@@ -128,7 +136,7 @@ div.lazy {
 }
 
 .research-toggle:hover h3 {
-    color: #0056b3;
+    color: var(--accent-hover);
 }
 
 .research-icon {
@@ -143,4 +151,63 @@ div.lazy {
 
 .research-toggle:not(.collapsed) .research-chevron {
     transform: rotate(180deg);
+}
+
+/* ---------- Accent color everywhere (overrides Bootstrap's default blue) ---------- */
+a {
+    color: var(--accent);
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+.text-primary,
+.accent-icon {
+    color: var(--accent) !important;
+}
+
+.btn-primary,
+.badge-primary,
+.bg-primary {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+}
+
+.btn-outline-dark,
+.btn-outline-primary {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.btn-outline-dark:hover,
+.btn-outline-dark:focus,
+.btn-outline-dark:active,
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+    color: #fff !important;
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+}
+
+.btn:focus,
+.btn.focus,
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem var(--accent-ring) !important;
+}
+
+/* Side menus on the Research and Publications pages */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.research-tile:hover {
+    background-color: var(--accent-soft);
+}
+
+::selection {
+    background-color: #A7F3D0;
 }
