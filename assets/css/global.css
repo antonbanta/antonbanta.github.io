@@ -46,6 +46,21 @@ h1, h2, h3, h4, h5, h6,
     opacity: 0.95;
 }
 
+/* Title bar color */
+.navbar.bg-dark {
+    background-color: #064E3B !important;
+    opacity: 1;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .active > .nav-link {
+    color: #fff;
+}
+
 .inline-badge {
     height: 16px;
     vertical-align: -10%;
