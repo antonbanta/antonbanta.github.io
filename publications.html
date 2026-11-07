@@ -10,8 +10,29 @@ body_attr: >-
 
 <div class="row">
     <div class="col-12 col-lg-10">
+
+        <div class="mt-4 p-4 bg-white shadow-sm rounded-xl">
+            <h2 class="h3 mb-2">Publications &amp; Patents</h2>
+            <p class="mb-3">
+                Papers, preprints, and theses are listed below by year. For the complete, up-to-date list, including
+                conference abstracts and citation counts, see Google Scholar.
+                Papers are also grouped by topic on the <a href="{{ '/research' | relative_url }}">research page</a>.
+            </p>
+            {%- if site.data.profile.gscholar contains 'scholar.google' -%}
+            {%- assign gscholar_url = site.data.profile.gscholar -%}
+            {%- else -%}
+            {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
+            {%- endif -%}
+            <a class="btn btn-sm btn-outline-dark mr-1 mb-1" target="_blank" href="{{ gscholar_url }}"><i class="ai ai-google-scholar"></i> All publications (Google Scholar)</a>
+            {% if site.data.profile.patents_url %}
+            <a class="btn btn-sm btn-outline-dark mr-1 mb-1" target="_blank" href="{{ site.data.profile.patents_url }}"><i class="fas fa-certificate"></i> All patents (Google Patents)</a>
+            {% endif %}
+            {% if site.data.profile.orcid %}
+            <a class="btn btn-sm btn-outline-dark mb-1" target="_blank" href="https://orcid.org/{{ site.data.profile.orcid }}"><i class="ai ai-orcid"></i> ORCID</a>
+            {% endif %}
+        </div>
+
         {% for year in pubs_by_year %}
-        {% assign num_papers = year.items | size %}
         <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
         <div class="my-0 p-0 bg-white shadow-sm rounded-xl">
             {% for item in year.items %}
@@ -19,6 +40,20 @@ body_attr: >-
             {% endfor %}
         </div>
         {% endfor %}
+
+        {% if site.data.patents %}
+        <h2 class="pt-4" id="patents">Patents</h2>
+        <div class="my-0 p-0 bg-white shadow-sm rounded-xl">
+            {% for patent in site.data.patents %}
+            <div class="p-3 {% unless forloop.last %}border-bottom border-gray{% endunless %}">
+                <h5 class="mt-0 mb-1 font-weight-normal">{{ patent.title }}</h5>
+                <p class="mt-0 mb-0 small"><i>{{ patent.number }}</i> · {{ patent.status }}</p>
+                <p class="mt-0 mb-0 small text-muted">{{ patent.summary }}</p>
+                <p class="small pb-0 mb-0 text-muted abstract-links"><a target="_blank" href="{{ patent.url }}">[Google Patents]</a></p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
     </div>
 
     <div class="col-2 d-none d-lg-block">
@@ -26,6 +61,9 @@ body_attr: >-
             {% for year in pubs_by_year %}
             <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
             {% endfor %}
+            {% if site.data.patents %}
+            <a class="nav-link d-block" href="#patents">Patents</a>
+            {% endif %}
         </div>
     </div>
 

@@ -86,6 +86,16 @@
                         {% endif %}
                     </div>
                 </div>
+
+                {% if site.data.profile.calendly %}
+                <div class="row pb-1">
+                    <div class="col text-center">
+                        <a class="btn btn-sm btn-outline-dark" target="_blank" href="{{ site.data.profile.calendly }}">
+                            <i class="far fa-calendar-alt mr-1"></i>{{ site.data.profile.calendly_label | default: "Book a meeting" }}
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>

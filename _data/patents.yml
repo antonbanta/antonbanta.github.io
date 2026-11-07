@@ -1,0 +1,10 @@
+# Patents and patent applications. Each entry shows on the Publications page and,
+# if `topics` is set, in the matching section of the Research page.
+- title: "Methods and devices for the non-invasive assessment of cerebro-spinal dynamics and diagnosis of brain pathophysiologies"
+  number: WO2024211033A2
+  status: "International patent application, filed March 2024"
+  summary: >-
+    Machine learning and signal processing applied to physiological signals such as EEG, PPG, and ECG to
+    estimate cerebrospinal fluid dynamics and detect their dysfunction.
+  url: https://patents.google.com/patent/WO2024211033A2/en
+  topics: [csf]
