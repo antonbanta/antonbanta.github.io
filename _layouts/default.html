@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ page.title }} - {{ site.data.profile.navbar_name }}</title>
+    {%- assign meta_description = page.description | default: site.data.profile.meta_description | strip_newlines | strip %}
+    <meta name="description" content="{{ meta_description | escape }}">
+    <meta property="og:title" content="{{ site.data.profile.primary_name }}{% if page.navbar_title != 'Home' %} - {{ page.title }}{% endif %}">
+    <meta property="og:description" content="{{ meta_description | escape }}">
+    <meta property="og:type" content="website">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous" />

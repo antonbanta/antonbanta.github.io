@@ -8,7 +8,13 @@
         {% include widgets/publication_item.html item=item first=false last=false %}    
     {% endfor %}
     <h6 class="d-block p-3 mt-0 text-right">
-        <a href="{{ 'publications' | relative_url }}">All publications <i class="fas fa-angle-double-right"></i></a>
+        {%- if site.data.profile.gscholar contains 'scholar.google' -%}
+        {%- assign gscholar_url = site.data.profile.gscholar -%}
+        {%- else -%}
+        {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
+        {%- endif -%}
+        <a class="mr-3" target="_blank" href="{{ gscholar_url }}"><i class="ai ai-google-scholar"></i> Google Scholar</a>
+        <a href="{{ 'publications' | relative_url }}">All publications &amp; patents <i class="fas fa-angle-double-right"></i></a>
     </h6>
 </div>
 

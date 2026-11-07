@@ -86,6 +86,23 @@
                         {% endif %}
                     </div>
                 </div>
+
+                {% if site.data.profile.cv_link or site.data.profile.calendly %}
+                <div class="row pb-1">
+                    <div class="col text-center">
+                        {% if site.data.profile.cv_link %}
+                        <a class="btn btn-sm btn-outline-dark m-1" target="_blank" href="{{ site.data.profile.cv_link | relative_url }}">
+                            <i class="far fa-file-alt mr-1"></i>{{ site.data.profile.cv_label | default: "CV" }}
+                        </a>
+                        {% endif %}
+                        {% if site.data.profile.calendly %}
+                        <a class="btn btn-sm btn-outline-dark m-1" target="_blank" href="{{ site.data.profile.calendly }}">
+                            <i class="far fa-calendar-alt mr-1"></i>{{ site.data.profile.calendly_label | default: "Book a meeting" }}
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>

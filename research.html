@@ -1,0 +1,135 @@
+---
+layout: default
+title : Research
+navbar_title: Research
+body_attr: >-
+  data-spy="scroll" data-target="#navbar-research" data-offset="100"
+---
+
+{% assign all_pubs = site.publications | sort: "date" | reverse %}
+
+<div class="row">
+    <div class="col-12 col-lg-10">
+
+        <div class="mt-4 p-4 bg-white shadow-sm rounded-xl">
+            <h2 class="h3 mb-3">Research</h2>
+            <p class="mb-3">
+                I build machine learning and signal processing methods that turn noisy physiological signals into
+                measurements of things that are otherwise hard to observe: how fluid moves through the brain, what
+                the nervous system is trying to do, and what the heart looks like from the outside. Click an area
+                below to read why I find it interesting and see the papers associated with it.
+            </p>
+            <div class="small">
+                <a href="#" id="research-expand-all" class="mr-3"><i class="fas fa-angle-double-down mr-1"></i>Expand all</a>
+                <a href="#" id="research-collapse-all"><i class="fas fa-angle-double-up mr-1"></i>Collapse all</a>
+            </div>
+        </div>
+
+        {% for section in site.data.research %}
+        {%- assign n_items = 0 -%}
+        {%- if section.topic -%}
+        {%- for item in all_pubs -%}{%- if item.topics contains section.topic -%}{%- assign n_items = n_items | plus: 1 -%}{%- endif -%}{%- endfor -%}
+        {%- for patent in site.data.patents -%}{%- if patent.topics contains section.topic -%}{%- assign n_items = n_items | plus: 1 -%}{%- endif -%}{%- endfor -%}
+        {%- endif -%}
+        <div class="mt-3 bg-white shadow-sm rounded-xl research-section" id="{{ section.id }}">
+            <a class="research-toggle collapsed d-flex align-items-center p-4 text-body"
+               data-toggle="collapse" href="#{{ section.id }}-body" role="button"
+               aria-expanded="false" aria-controls="{{ section.id }}-body">
+                <div class="research-icon mr-3 accent-icon"><i class="{{ section.icon }}"></i></div>
+                <div class="flex-grow-1">
+                    <h3 class="h5 mb-1">{{ section.title }}</h3>
+                    <div class="small text-muted">
+                        {{ section.short }}
+                        {% if n_items > 0 %}<span class="badge badge-light border ml-1">{{ n_items }} publication{% if n_items > 1 %}s{% endif %}</span>{% endif %}
+                    </div>
+                </div>
+                <i class="fas fa-chevron-down research-chevron ml-3 text-muted"></i>
+            </a>
+
+            <div class="collapse research-body" id="{{ section.id }}-body">
+                <div class="px-4 pb-4 pt-0">
+                    <div class="text-profile-bio">{{ section.body }}</div>
+
+                    {% if section.threads %}
+                    <ul class="pl-3">
+                        {% for thread in section.threads %}
+                        <li class="mb-2">{{ thread }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
+                    {% if section.questions %}
+                    <h6 class="mt-3 text-muted text-uppercase small font-weight-bold">Questions I'm thinking about</h6>
+                    <ul class="pl-3 mb-0">
+                        {% for q in section.questions %}
+                        <li class="mb-1">{{ q }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
+                    {% if n_items > 0 %}
+                    <h6 class="mt-4 pt-3 border-top text-muted text-uppercase small font-weight-bold">Related publications</h6>
+                    <ul class="list-unstyled mb-0">
+                        {% for item in all_pubs %}
+                        {% if item.topics contains section.topic %}
+                        {% include widgets/publication_compact.html item=item %}
+                        {% endif %}
+                        {% endfor %}
+                        {% for patent in site.data.patents %}
+                        {% if patent.topics contains section.topic %}
+                        <li class="mb-3">
+                            <div class="font-weight-bold" style="line-height: 1.3;"><a class="text-body" target="_blank" href="{{ patent.url }}">{{ patent.title }}</a></div>
+                            <div class="small text-muted"><i class="fas fa-certificate mr-1"></i>Patent application {{ patent.number }} <a class="ml-1" target="_blank" href="{{ patent.url }}">[Google Patents]</a></div>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="mt-4 p-4 bg-white shadow-sm rounded-xl">
+            <p class="mb-0">
+                Interested in collaborating or chatting about any of this? Email me at
+                <a class="email-text" href="mailto:{{ site.data.profile.email | encode_email }}">{{ site.data.profile.email | replace: "@", "(at)" }}</a>{% if site.data.profile.calendly %}
+                or <a target="_blank" href="{{ site.data.profile.calendly }}">request a meeting</a>{% endif %}.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-2 d-none d-lg-block">
+        <div id="navbar-research" class="nav nav-pills flex-column sticky-top" style="top: 80px">
+            {% for section in site.data.research %}
+            <a class="nav-link d-block small" href="#{{ section.id }}">{{ section.title }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+// Sections start collapsed. A link to /research#<id> (e.g. from the homepage tiles or the side menu) opens that section.
+document.addEventListener('DOMContentLoaded', function () {
+    function openSection(id, scroll) {
+        var body = document.getElementById(id + '-body');
+        if (!body) return;
+        $(body).collapse('show');
+        if (scroll) {
+            setTimeout(function () {
+                document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+        }
+    }
+    if (location.hash) openSection(decodeURIComponent(location.hash.slice(1)), true);
+    window.addEventListener('hashchange', function () {
+        openSection(decodeURIComponent(location.hash.slice(1)), true);
+    });
+    $(document).on('click', 'a[href^="#"]:not([data-toggle])', function () {
+        var id = this.getAttribute('href').slice(1);
+        if (id) openSection(id, false);
+    });
+    $('#research-expand-all').on('click', function (e) { e.preventDefault(); $('.research-body').collapse('show'); });
+    $('#research-collapse-all').on('click', function (e) { e.preventDefault(); $('.research-body').collapse('hide'); });
+});
+</script>

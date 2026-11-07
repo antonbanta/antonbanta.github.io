@@ -1,0 +1,121 @@
+# Research areas shown on the Research page (and as tiles on the homepage).
+#   id:       anchor for links, e.g. /research#csf
+#   topic:    publications whose `topics:` list contains this value are listed under the section
+#   short:    one-line description used on the homepage tiles
+#   body:     main text (HTML)
+#   threads:  optional list of specific projects/results (HTML allowed)
+#   questions: optional list of open questions you're interested in
+
+- id: csf
+  title: Cerebrospinal fluid flow & brain clearance
+  icon: fas fa-water
+  topic: csf
+  short: Measuring how CSF moves through the brain, and whether we can track it noninvasively.
+  body: >-
+    <p>
+      Cerebrospinal fluid (CSF) does more than cushion the brain. During sleep, CSF moves along the spaces that
+      surround the brain's blood vessels and helps flush metabolic waste out of brain tissue, a process often
+      called the <em>glymphatic system</em>. I'm especially interested in the hypothesis that
+      neurodegeneration is driven in part by failing clearance: as arteries stiffen with age and vascular
+      disease, the pulsations that help propel CSF weaken, drainage slows, and waste such as amyloid-β builds up.
+    </p>
+    <p>
+      Testing ideas like this in people is hard because CSF flow is so difficult to measure. The best
+      measurements come from MRI, which is expensive, captures only a snapshot, and can't follow someone
+      through a night of sleep at home. My PhD focused on building better tools for this.
+    </p>
+  threads:
+  - >-
+    <strong>Measuring perivascular flow directly.</strong> Using contrast-free 7T phase-contrast MRI, we built a
+    semi-automated pipeline that finds the perivascular spaces around major brain arteries and quantifies CSF
+    flow inside them, revealing differences with age.
+  - >-
+    <strong>Estimating CSF flow without a scanner.</strong> By pairing 7T MRI measurements of flow through the
+    cerebral aqueduct with overnight polysomnography, we showed that ECG, PPG, EEG, and respiration together can
+    reconstruct CSF flow dynamics: a step toward a noninvasive, wearable digital biomarker of brain clearance.
+    This work is also the basis of a patent application.
+  questions:
+  - Can wearable sensors track brain clearance night after night?
+  - Does impaired CSF flow precede cognitive decline, and can sleep, exercise, or vascular health restore it?
+
+- id: bci
+  title: Brain–computer interfaces & neural recording
+  icon: fas fa-brain
+  topic: bci
+  short: Decoding the nervous system from the scalp, the brain, and the spinal cord.
+  body: >-
+    <p>
+      I'm drawn to interfaces that read from and write to the nervous system as non-invasively as possible.
+      Across projects I've worked with signals recorded at very different depths, from scalp EEG to
+      electrodes inside the brain to arrays on the surface of the spinal cord, and with the machine learning
+      needed to decode them. With collaborators at Houston Methodist and Cambridge, I also wrote a review of
+      where brain–computer interfaces and neuroprosthetics stand today and what their clinical translation
+      means for neurosurgery.
+    </p>
+  threads:
+  - >-
+    <strong>Spinal cord interfaces.</strong> With collaborators at Houston Methodist and the University of
+    Cambridge, I contributed data analysis and machine learning for an ultrathin electrode array that wraps
+    around the spinal cord without penetrating it. From this single device, deep learning decoders recovered
+    motor intent and classified sensory and visceral inputs in freely moving rats.
+  - >-
+    <strong>Scalp versus intracranial recordings.</strong> How much of what deep electrodes capture can be
+    recovered from the scalp? We've studied simultaneous scalp EEG and stereo-EEG recordings, and reviewed the
+    methods used to infer neural sources from EEG.
+  - >-
+    <strong>Neural decoding during natural behavior.</strong> I analyzed large neural datasets recorded from
+    freely moving primates, studying continual learning across behavioral contexts and using foundation models
+    and diffusion architectures to reconstruct visual perception from invasive neural recordings.
+  - >-
+    <strong>Non-invasive prosthetic control.</strong> As an advisor to Morph Labs, I help develop an EEG-based
+    system for natural, intuitive control of prosthetic limbs.
+  questions:
+  - How far can non-invasive and minimally invasive interfaces (scalp EEG, endovascular electrodes) close the gap with implanted ones?
+  - Can focused ultrasound, currently the only modality able to reach deep brain targets non-invasively, make targeted deep brain stimulation practical?
+
+- id: cardiac
+  title: Cardiac signal processing
+  icon: fas fa-heartbeat
+  topic: cardiac
+  short: Deep learning that turns pacemaker and reduced-lead signals into the 12-lead ECG.
+  body: >-
+    <p>
+      Pacemakers and implantable defibrillators record the heart's electrical activity from the inside
+      (intracardiac electrograms), but cardiologists are trained to read the 12-lead surface ECG, which normally
+      requires a clinic visit. Working with the Texas Heart Institute, my early PhD research asked whether deep
+      learning could bridge that gap and make remote cardiac monitoring more useful.
+    </p>
+  threads:
+  - >-
+    <strong>ECG from pacemaker signals.</strong> A convolutional encoder–decoder that reconstructs the full
+    12-lead ECG from intracardiac electrograms, and the reverse.
+  - >-
+    <strong>Running on the device.</strong> With computer architecture collaborators, we co-designed networks and
+    hardware accelerators efficient enough for real-time reconstruction on implantable devices.
+  - >-
+    <strong>Fewer leads, same information.</strong> Reconstructing the 12-lead ECG from reduced lead sets, making
+    wearable and at-home monitoring more practical.
+
+- id: learning
+  title: Learning structure from physiological data
+  icon: fas fa-project-diagram
+  short: Unsupervised and self-supervised learning on noisy, multimodal, longitudinal signals.
+  body: >-
+    <p>
+      A common thread across my work is learning from physiological signals that are noisy, multimodal, and
+      sparsely labeled. I've long been interested in unsupervised and self-supervised learning: models that
+      discover structure in data on their own. One long-term goal is learning knowledge graphs and causal (DAG)
+      structure directly from data, much as a person can pick up a new field just by listening to experts talk
+      about it.
+    </p>
+    <p>
+      Wearables make this especially exciting. Devices worn every night produce long, rich records of the heart,
+      breathing, temperature, and movement, which could reveal slow changes in health long before symptoms
+      appear, including changes in the brain (see <a href="#csf">CSF flow &amp; brain clearance</a>). That's
+      a large part of my work at Oura, where I help turn new ring sensing modalities into health features, from
+      human-subject studies of next-generation optical, mechanical, and physiological sensors to the algorithms
+      that extract biomarkers from multimodal time series.
+    </p>
+  questions:
+  - Can self-supervised models trained on paired signals (for example, intracranial and scalp EEG) improve what we can infer from the cheaper signal alone?
+  - Can we learn interpretable, causal structure from physiological time series instead of only predictive features?

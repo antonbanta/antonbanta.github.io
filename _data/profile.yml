@@ -2,57 +2,90 @@ primary_name: "Anton Banta"
 secondary_name: ""
 navbar_name: "Anton Banta"
 
-positions:
-- name: Biotech and ML Engineer
-- name: Houston Methodist
-  logo: /assets/images/badges/HMH_logo.jpg  # Logo is optional
+# Shown in search-engine results and link previews
+meta_description: >-
+  Anton Banta, PhD — Senior Algorithm Scientist at Oura. Machine learning and signal processing for
+  physiological data: cerebrospinal fluid flow, brain–computer interfaces, and cardiac signals.
 
+positions:
+- name: Senior Algorithm Scientist, Oura
+- name: Advisor, Morph Labs
 
 email: "anton.banta@gmail.com"
-# cv_link: link-to-your-cv-file
-gscholar: GokB5_MAAAAJ  # This is an example, replace it with your own Google Scholar ID
+cv_link: /assets/Anton_Banta_Resume.pdf   # public copy (phone number and street address removed)
+cv_label: Resume
+gscholar: GokB5_MAAAAJ
 github: antonbanta
-# wechat_qrcode: /assets/images/etc/wechat.jpg
-# wechat_prompt: >-
-#   Please tell me your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
-# linkedin: your-linked-in-id
-# orcid: 0000-0000-0000-0000
+linkedin: anton-banta-phd-998b8a132
+orcid: 0000-0002-4284-4047
+patents_url: https://patents.google.com/?inventor=Anton+Banta
+
+# Meeting booking link (shown as a button under your contact info)
+calendly: https://calendly.com/anton-banta/30min
+calendly_label: Request a meeting
 
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    A <a href="https://en.wikipedia.org/wiki/Bicolor_cat" target="_blank">bicolor cat</a> is a cat with white fur combined with fur of some other colour, for example solid black, tabby, or colourpointed.
+    I'm a Senior Algorithm Scientist at <strong>Oura</strong>, where I work on turning new ring sensing
+    modalities into health features, from human-subject studies of next-generation sensors to the signal
+    processing and machine learning that extracts physiological biomarkers from them. I'm also an advisor to
+    <strong>Morph Labs</strong>, which is building an EEG-based system for natural, non-invasive control of
+    prosthetic limbs.
   </p>
   <p>
-    There are various patterns of a bicolour cat. These range from the Van-patterned (colour on the crown of the head 
-    and the tail only) to a solid colour with a throat locket or medallion. Bicolour coats are found in many cat breeds, 
-    as well as being common in domestic longhair and domestic shorthair cats.
+    My work sits where machine learning, signal processing, and neuroscience meet: I build models that turn
+    noisy physiological signals into measurements of things that are otherwise hard to observe. I did my PhD in
+    Electrical and Computer Engineering at Rice University with Behnaam Aazhang, developing technologies to
+    measure how cerebrospinal fluid (CSF) moves through the human brain, from 7T MRI methods for perivascular
+    flow to models that estimate CSF flow from overnight sleep recordings. Earlier, I used deep learning to
+    reconstruct the 12-lead ECG from pacemaker signals. At Houston Methodist, I built machine learning models
+    for neural interfaces and neuroscience, from decoding spinal cord signals to analyzing neural recordings
+    from freely moving primates.
+  </p>
+  <p>
+    I'm especially interested in the glymphatic system and the idea that impaired brain waste clearance drives
+    neurodegeneration, in brain–computer interfaces, and in unsupervised learning methods that discover
+    structure in data on their own. You can read more on my <a href="research">research page</a>.
+  </p>
+  <p>
+    Outside of research, I enjoy photography (you can see some of my work at
+    <a href="https://antonbantaphotography.com/" target="_blank">antonbantaphotography.com</a>), travel,
+    climbing, and hiking.
   </p>
 
 portrait_url: /assets/images/portrait.jpeg
 # portrait_caption: >-
-#   Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
+#   Optional caption shown when hovering over the photo.
 
 education:
 - name: Rice University
   logo: /assets/images/badges/Rice_logo.jpg
-  position: Ph.D. in Electrical and Computer Engineering
-  date: Aug 2019 - Dec 2023
+  dept: Ph.D., Electrical and Computer Engineering
+  position: "Advisor: Behnaam Aazhang"
+  date: Aug 2019 – Dec 2023
 - name: Rice University
   logo: /assets/images/badges/Rice_logo.jpg
-  position: B.S. in Bioengineering
-  date: Aug 2015 - May 2019
+  dept: B.S., Bioengineering
+  date: Aug 2015 – May 2019
 
-# experience:
-# - name: Peking University
-#   logo: /assets/images/badges/PKU_red.png
-#   position: Research Intern
-#   date: Sep. 2019 - Jul. 2021
+# A logo is optional: add an image to assets/images/badges/ and set `logo:` to show it.
+experience:
+- name: Oura
+  position: Senior Algorithm Scientist
+  date: Jan 2026 – Present
+- name: Morph Labs
+  position: Advisor
+  date: ""   # add a start year, e.g. "2025 – Present"
+- name: Houston Methodist
+  logo: /assets/images/badges/HMH_icon.png
+  dept: Biotech Engineer – Machine Learning
+  date: Jan 2024 – Jan 2026
+- name: Sensorum
+  position: AI PhD Summer Intern
+  date: May – Aug 2022
 
-awards:
-- name: Award Name 2
-  date: 2024
-- name: Award Name 1 
-  date: 2021
-- name: A quick brown fox jumps over the lazy dog and runs away award
-  date: 2021
+# Add honors, fellowships, and awards here; the section is hidden while this list is empty.
+# awards:
+# - name: Award name
+#   date: 2025
